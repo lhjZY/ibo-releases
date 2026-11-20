@@ -1,0 +1,94 @@
+<!doctype html>
+<!--
+  Ibo's changelog: a version each, newest first, written for people using the app.
+  The app repository's CHANGELOG.md is the full record; add each release here when it is published.
+-->
+<html lang="zh-CN" data-lang="zh" data-os="mac">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ibo 更新日志 Changelog</title>
+<meta name="description" content="Ibo 每个版本的更新内容。What changed in each version of Ibo.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+
+<header class="wrap">
+  <nav aria-label="Ibo">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="28" height="28">Ibo</a>
+    <div class="links">
+      <a class="section" href="index.html#translate"><span lang="zh">翻译</span><span lang="en">Translate</span></a>
+      <a class="section" href="index.html#check"><span lang="zh">检查</span><span lang="en">Check</span></a>
+      <a class="section" href="index.html#learn"><span lang="zh">学习</span><span lang="en">Learn</span></a>
+      <a href="changelog.html" aria-current="page"><span lang="zh">更新日志</span><span lang="en">Changelog</span></a>
+      <a class="nav-download" href="index.html#download"><span lang="zh">下载</span><span lang="en">Download</span></a>
+      <button id="language" type="button"><span lang="zh" aria-label="Switch to English">EN</span><span lang="en" aria-label="切换到中文">中文</span></button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap policy changelog">
+  <h2><span lang="zh">更新日志</span><span lang="en">Changelog</span></h2>
+  <!-- Releases, newest first. -->
+  <article class="release" id="v0.1.2">
+    <h3>0.1.2</h3>
+    <p class="note"><span lang="zh">2026 年 11 月 20 日</span><span lang="en">November 20, 2026</span></p>
+    <div lang="zh"><p>学习模式</p><ul>
+      <li>结果旁的 ♡ 或 ⌘D 把句子收进词汇本，可以顺手记下场景，收错了能撤销</li>
+      <li>⇧⌘L（Windows 为 Alt+Shift+L）把弹窗切换成复习卡片：看中文写英文、听写、改错、连词成句四种题型，逐词作答，答完显示句子结构和评级</li>
+      <li>新的学习窗口：今日、词汇本（搜索、筛选、分组、编辑、导出 JSON 或 CSV）和统计（过去一年的练习、近 30 天评分分布、最近练习）</li>
+      <li>句子结构按成分着色，标出音标和释义，点击单词朗读，右键把单词或词组收进词汇本</li>
+      <li>设置新增“学习”页：每天复习和新学的数量、每日开始时间、题型、朗读与场景；托盘显示今天还剩几条待复习，可以关闭</li>
+    </ul><p>其他改进</p><ul>
+      <li>macOS 版通过 Apple 公证，下载后可以直接打开</li>
+      <li>弹窗始终显示在其他窗口之上，不会再被前台应用挡住</li>
+      <li>macOS 上 Ibo 常驻 Dock，点 Dock 图标打开翻译弹窗</li>
+      <li>从 0.1.1 升级后，需要在“系统设置 › 隐私与安全性 › 辅助功能”中重新允许 Ibo</li>
+    </ul></div>
+    <div lang="en"><p>Learn Mode</p><ul>
+      <li>Click ♡ beside a result or press ⌘D to keep a sentence in the notebook, with a note about where you read it, and undo if you change your mind</li>
+      <li>⇧⌘L (Alt+Shift+L on Windows) turns the popup into a review card with four exercises: write it from the Chinese, dictation, correction and sentence building. Answer word by word, then see the sentence’s structure and your grade</li>
+      <li>A new Learn window: Today, the notebook (search, filter, group, edit, export as JSON or CSV) and statistics (a year of practice, grades over the last 30 days, recent practice)</li>
+      <li>Sentence structure is coloured by role, with phonetics and meanings. Click a word to hear it, or right-click to keep a word or phrase</li>
+      <li>A new Learn page in Settings: reviews and new entries per day, when the day begins, exercises, read-aloud and notes. The tray shows how many reviews are left today, and this can be turned off</li>
+    </ul><p>Other improvements</p><ul>
+      <li>The macOS version is notarized by Apple and opens straight after download</li>
+      <li>The popup always stays above other windows instead of being covered by the app in front</li>
+      <li>On macOS Ibo stays in the Dock; click its icon to open the translation popup</li>
+      <li>After upgrading from 0.1.1, allow Ibo again in System Settings › Privacy &amp; Security › Accessibility</li>
+    </ul></div>
+  </article>
+  <article class="release" id="v0.1.1">
+    <h3>0.1.1</h3>
+    <p class="note"><span lang="zh">2026 年 11 月 7 日</span><span lang="en">November 7, 2026</span></p>
+    <div lang="zh"><p>Ibo 有了新名字和新图标</p><ul>
+      <li>AI 翻译与英文检查：改过的词有下划线，附中文意思和修改说明，可以补充原意重新检查</li>
+      <li>检查选中文本后，⌘↩ 把改好的文字替换回原来的应用；原文已经变化时不会覆盖</li>
+      <li>原文、译文和逐句朗读，美式与英式英语各四种音色</li>
+      <li>快捷键改为点击录制，可以停用或一键恢复默认；Windows 默认改为 Alt+1、Alt+2、Alt+3 和 Alt+Shift+G</li>
+      <li>系统开启“减少透明度”时，弹窗改用不透明背景</li>
+      <li>出错时可以展开“错误详情”，便于反馈问题</li>
+    </ul></div>
+    <div lang="en"><p>Ibo has a new name and a new icon</p><ul>
+      <li>AI translation and English checking: changed words are underlined, with the meaning in Chinese and the reasons, and you can add what you meant to check again</li>
+      <li>After checking a selection, ⌘↩ replaces it with the corrected text in the app it came from, unless the original has changed</li>
+      <li>Read aloud the original, the translation or one sentence at a time, in four American and four British voices</li>
+      <li>Record shortcuts by pressing them, turn any off, or restore the defaults at once. The Windows defaults are now Alt+1, Alt+2, Alt+3 and Alt+Shift+G</li>
+      <li>With Reduce Transparency on, the popup uses a solid background</li>
+      <li>When something fails, Error Details show what to include in a report</li>
+    </ul></div>
+  </article>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Ibo</span>
+  <span class="footer-links">
+    <a href="privacy.html"><span lang="zh">隐私政策</span><span lang="en">Privacy</span></a>
+    <span><span lang="zh">为 macOS 与 Windows 而设计</span><span lang="en">Designed for macOS and Windows</span></span>
+  </span>
+</footer>
+
+</body>
+</html>

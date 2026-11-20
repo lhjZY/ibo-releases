@@ -1,0 +1,139 @@
+<!doctype html>
+<!--
+  Ibo's privacy policy, in both languages like the rest of the site. It follows what the app does
+  (README "数据目录", docs/divergences.md); change it when the app starts sending anything new.
+-->
+<html lang="zh-CN" data-lang="zh" data-os="mac">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ibo 隐私政策 Privacy Policy</title>
+<meta name="description" content="Ibo 的隐私政策：没有账户，不收集数据，内容只在你的电脑上。Ibo's privacy policy: no account, no data collected, your things stay on your computer.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+
+<header class="wrap">
+  <nav aria-label="Ibo">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="28" height="28">Ibo</a>
+    <div class="links">
+      <a class="section" href="index.html#translate"><span lang="zh">翻译</span><span lang="en">Translate</span></a>
+      <a class="section" href="index.html#check"><span lang="zh">检查</span><span lang="en">Check</span></a>
+      <a class="section" href="index.html#learn"><span lang="zh">学习</span><span lang="en">Learn</span></a>
+      <a href="changelog.html"><span lang="zh">更新日志</span><span lang="en">Changelog</span></a>
+      <a class="nav-download" href="index.html#download"><span lang="zh">下载</span><span lang="en">Download</span></a>
+      <button id="language" type="button"><span lang="zh" aria-label="Switch to English">EN</span><span lang="en" aria-label="切换到中文">中文</span></button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap policy">
+  <article lang="zh">
+    <h2>Ibo 隐私政策</h2>
+    <p class="note">更新日期：2026 年 11 月 20 日</p>
+    <p>Ibo 是一个在你的 Mac 或 Windows 电脑上运行的应用。它没有账户。我们（Ibo 的开发者）不收集你的任何数据，也看不到你用 Ibo 翻译、检查或收藏的任何内容。</p>
+
+    <h3>我们不收集什么</h3>
+    <ul>
+      <li>不收集你翻译或检查的文字、词汇本、练习记录或设置。</li>
+      <li>不收集使用统计、崩溃报告、设备信息或任何标识符。</li>
+      <li>不跟踪你，不使用广告或分析服务。</li>
+    </ul>
+
+    <h3>你的数据存在哪里</h3>
+    <p>设置、词汇本和练习记录保存在这台电脑上 Ibo 自己的数据文件夹里：macOS 为“资源库/Application Support/Ibo”，Windows 为 %AppData%\Ibo。</p>
+    <p>AI 服务的密钥同样只保存在这台电脑上：macOS 上是只有你的用户账户能读的文件，Windows 上用系统的数据保护功能（DPAPI）加密。密钥不会出现在界面、日志或错误信息里。</p>
+
+    <h3>什么时候会有内容离开这台电脑</h3>
+    <p>只在你使用以下功能时：</p>
+    <ol>
+      <li><strong>翻译</strong>：你要翻译的文字会发送给当前选择的翻译引擎：微软翻译、Google 翻译、DeepSeek，或你自己填写的服务地址。</li>
+      <li><strong>检查与句子结构</strong>：要检查的英文和你补充的原意，或者要分析的句子，会发送给你在设置里配置的 AI 服务，使用你自己的密钥。</li>
+      <li><strong>朗读</strong>：要朗读的文字会发送给微软的在线语音服务，换回语音。</li>
+    </ol>
+    <p>收到内容的服务如何保存和使用它，由该服务自己的条款决定，与 Ibo 无关。除此之外，Ibo 不会把任何内容发送到网络上。</p>
+
+    <h3>读取选中文字与辅助功能权限</h3>
+    <ul>
+      <li><strong>只在你按下快捷键时读取</strong>：Ibo 读取最前面的应用里你选中的文字。macOS 上通过你授予的辅助功能权限读取，Windows 上通过 UI Automation 读取。读不到时，它会替你按一次复制，取到文字后把剪贴板恢复原样。</li>
+      <li><strong>翻译剪贴板</strong>：只在你按下对应快捷键时读取剪贴板里的文字。</li>
+      <li><strong>替换</strong>：只在你点“替换”或按对应快捷键时，把改好的文字写回原来的应用。原文在此期间已经变化时，Ibo 不会覆盖它。</li>
+    </ul>
+    <p>macOS 的辅助功能权限可以随时在“系统设置 › 隐私与安全性 › 辅助功能”中收回。</p>
+
+    <h3>日志</h3>
+    <p>Ibo 的运行日志只记录处理到哪一步、前台应用的标识和错误，不记录你选中的文字或密钥。日志不会写入文件，也不会发送出去。</p>
+
+    <h3>你可以随时</h3>
+    <ul>
+      <li>在学习窗口里把词汇本导出成 JSON 或 CSV 文件。</li>
+      <li>删除任意条目或分组，或在设置里清空全部学习数据。</li>
+      <li>在设置里删除已保存的 AI 服务密钥。</li>
+      <li>删除 Ibo，以及上文所说的数据文件夹。</li>
+    </ul>
+
+    <h3>变更</h3>
+    <p>如果 Ibo 将来发送新的内容，例如检查更新，我们会先更新这份政策，并在更新日志中说明。</p>
+  </article>
+
+  <article lang="en">
+    <h2>Ibo Privacy Policy</h2>
+    <p class="note">Updated November 20, 2026</p>
+    <p>Ibo is an app that runs on your Mac or Windows PC. It has no account. We, the developers of Ibo, collect none of your data and cannot see anything you translate, check or keep with it.</p>
+
+    <h3>What we do not collect</h3>
+    <ul>
+      <li>The text you translate or check, your notebook, your practice or your settings.</li>
+      <li>Usage statistics, crash reports, device information or identifiers of any kind.</li>
+      <li>Nothing tracks you; there are no advertising or analytics services.</li>
+    </ul>
+
+    <h3>Where your data is kept</h3>
+    <p>Settings, the notebook and your practice are saved in Ibo’s own data folder on this computer: Library/Application Support/Ibo on macOS, and %AppData%\Ibo on Windows.</p>
+    <p>Keys for AI services also stay on this computer: on macOS in a file only your user account can read, and on Windows encrypted with the system’s data protection (DPAPI). Keys never appear in the interface, the logs or error messages.</p>
+
+    <h3>When anything leaves this computer</h3>
+    <p>Only when you use these features:</p>
+    <ol>
+      <li><strong>Translation</strong>: the text you translate is sent to the engine you have chosen: Microsoft Translator, Google Translate, DeepSeek, or a service address you entered yourself.</li>
+      <li><strong>Checking and sentence structure</strong>: the English you check and what you add about its meaning, or the sentence being analysed, is sent to the AI service you set up, with your own key.</li>
+      <li><strong>Read aloud</strong>: the text to be read is sent to Microsoft’s online speech service, which returns the audio.</li>
+    </ol>
+    <p>How a service that receives your text keeps and uses it is up to that service’s own terms, not Ibo. Apart from this, Ibo sends nothing over the network.</p>
+
+    <h3>Reading selections and Accessibility</h3>
+    <ul>
+      <li><strong>Only when you press a shortcut</strong>: Ibo reads the text selected in the app in front. On macOS it uses the Accessibility access you grant, and on Windows UI Automation. If that fails, it presses Copy for you and puts the clipboard back as it was afterwards.</li>
+      <li><strong>Translate clipboard</strong>: the clipboard’s text is read only when you press that shortcut.</li>
+      <li><strong>Replace</strong>: corrected text is written back into the app it came from only when you click Replace or press its shortcut. If the original has changed in the meantime, Ibo leaves it alone.</li>
+    </ul>
+    <p>On macOS, Accessibility access can be withdrawn at any time in System Settings › Privacy &amp; Security › Accessibility.</p>
+
+    <h3>Logs</h3>
+    <p>Ibo’s logs record only how far a task got, the identifier of the app in front and errors, never the text you selected or your keys. They are not written to a file or sent anywhere.</p>
+
+    <h3>At any time you can</h3>
+    <ul>
+      <li>Export the notebook as a JSON or CSV file from the Learn window.</li>
+      <li>Delete any entry or group, or clear all learning data in Settings.</li>
+      <li>Delete a saved AI service key in Settings.</li>
+      <li>Delete Ibo and the data folder named above.</li>
+    </ul>
+
+    <h3>Changes</h3>
+    <p>If Ibo ever sends anything new, such as a check for updates, this policy will be updated first and the change noted in the changelog.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Ibo</span>
+  <span class="footer-links">
+    <a href="privacy.html" aria-current="page"><span lang="zh">隐私政策</span><span lang="en">Privacy</span></a>
+    <span><span lang="zh">为 macOS 与 Windows 而设计</span><span lang="en">Designed for macOS and Windows</span></span>
+  </span>
+</footer>
+
+</body>
+</html>

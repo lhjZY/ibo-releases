@@ -1,0 +1,132 @@
+/*
+  Ibo's site, in the same "Paper" direction as Asaki's: Radix Sand for the page, ink and lines,
+  Radix Amber (the bird's yellow) for the small marks of "here".
+  Four type sizes: 56 / 24 / 15 / 13. Lines are half a pixel.
+*/
+:root {
+  --sand1: #fdfdfc; --sand2: #f9f9f8; --sand3: #f1f0ef;
+  --sand6: #dad9d6; --sand7: #cfceca; --sand8: #bcbbb5; --sand9: #8d8d86; --sand11: #63635e; --sand12: #21201c;
+  --amber9: #ffc53d; --amber11: #ab6400;
+  --line: .5px solid var(--sand6);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--sand2); color: var(--sand12);
+  font: 15px/1.7 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Segoe UI", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--amber9); outline-offset: 3px; border-radius: 4px; }
+
+/* One language at a time, and the shortcuts of the visitor's system. */
+html[data-lang="zh"] [lang="en"], html[data-lang="en"] [lang="zh"] { display: none; }
+html[data-os="mac"] [data-for="windows"]:not(.installer), html[data-os="windows"] [data-for="mac"]:not(.installer) { display: none; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
+
+nav { display: flex; align-items: center; justify-content: space-between; height: 64px; border-bottom: var(--line); font-size: 13px; color: var(--sand11); }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: var(--sand12); }
+.brand img { border-radius: 6px; }
+.links { display: flex; align-items: center; gap: 28px; }
+.links a:hover, #language:hover, .links a[aria-current] { color: var(--sand12); }
+.nav-download { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 16px; background: var(--sand12); color: var(--sand1); font-weight: 550; }
+.links .nav-download:hover { background: #3b3a37; color: var(--sand1); }
+#language { font-size: 13px; color: var(--sand11); padding: 4px 10px; border: var(--line); border-radius: 6px; }
+
+h1 { font-size: 56px; line-height: 1.12; letter-spacing: -1.4px; font-weight: 650; }
+html[data-lang="zh"] h1 { letter-spacing: -.5px; line-height: 1.2; }
+h2 { font-size: 24px; line-height: 1.3; letter-spacing: -.3px; font-weight: 600; }
+.lede { margin-top: 20px; color: var(--sand11); max-width: 30em; }
+.note { margin-top: 12px; font-size: 13px; color: var(--sand9); font-variant-numeric: tabular-nums; }
+.button { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 24px; margin-top: 32px; border-radius: 22px; background: var(--sand12); color: var(--sand1); font-weight: 550; white-space: nowrap; }
+.button:hover { background: #3b3a37; }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 56px; padding-top: 80px; padding-bottom: 88px; }
+
+/* The app's own windows, rendered from its pages; a hairline and a soft shadow stand in for the window frame. */
+.window { border-radius: 12px; background: var(--sand1); box-shadow: 0 0 0 .5px var(--sand7), 0 24px 48px -24px rgba(33, 32, 28, .22); }
+.hero .window { width: 100%; max-width: 480px; justify-self: end; }
+figure .window { width: 100%; max-width: 440px; margin: 0 auto; }
+.feature.wide .window { grid-column: 1 / -1; width: 100%; max-width: 900px; margin: 40px auto 0; }
+
+/* Each of the three things Ibo does opens with its name on a hairline. */
+.part { padding: 20px 0; border-top: var(--line); font-size: 13px; font-weight: 600; color: var(--amber11); }
+.part + .feature { border-top: 0; padding-top: 40px; }
+.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; padding: 72px 0; border-top: var(--line); }
+.feature p { margin-top: 14px; color: var(--sand11); max-width: 30em; }
+figure { justify-self: center; width: 100%; max-width: 440px; }
+.feature.wide { align-items: start; row-gap: 0; }
+
+figcaption { margin-top: 14px; font-size: 13px; color: var(--sand11); }
+
+.keys { display: grid; font-size: 13px; color: var(--sand11); }
+.keys div { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: var(--line); }
+.keys div:first-child { border-top: var(--line); }
+.keys dt { display: flex; gap: 4px; }
+kbd { min-width: 26px; height: 26px; padding: 0 7px; display: inline-flex; align-items: center; justify-content: center; border: .5px solid var(--sand8); border-radius: 6px; background: var(--sand1); font: 13px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; color: var(--sand12); }
+
+.services { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--sand11); }
+.services li { padding: 5px 12px; border: .5px solid var(--sand8); border-radius: 14px; }
+/* The engines that need no key, set apart from the AI services. */
+.services li.free { color: var(--sand12); border-color: var(--sand12); }
+
+.details { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding: 56px 0 96px; border-top: var(--line); }
+.details dt { font-weight: 600; }
+.details dd { margin-top: 6px; color: var(--sand11); }
+
+/* Downloads: one row per installer; the row for the visitor's system carries the filled button (site.js). */
+.download { padding-top: 80px; padding-bottom: 104px; border-top: var(--line); }
+.download > img { margin: 0 auto 20px; border-radius: 16px; }
+.download > h2 { text-align: center; }
+.download > .note { text-align: center; }
+.installers { max-width: 640px; margin: 40px auto 0; }
+.installer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: var(--line); }
+.installer:first-child { border-top: var(--line); }
+.installer .name { font-weight: 600; }
+.installer .about { margin-top: 2px; font-size: 13px; color: var(--sand11); }
+.installer .button { flex: none; margin-top: 0; height: 36px; padding: 0 18px; border-radius: 18px; background: none; color: var(--sand12); box-shadow: inset 0 0 0 .5px var(--sand8); font-weight: 500; }
+.installer .button:hover { background: var(--sand3); }
+.installer.primary .button { background: var(--sand12); color: var(--sand1); box-shadow: none; font-weight: 550; }
+.installer.primary .button:hover { background: #3b3a37; }
+.first-run { max-width: 640px; margin: 32px auto 0; font-size: 13px; color: var(--sand11); }
+.first-run p + p { margin-top: 8px; }
+.first-run strong { color: var(--sand12); font-weight: 600; }
+
+footer { display: flex; justify-content: space-between; padding-top: 24px; padding-bottom: 40px; border-top: var(--line); font-size: 13px; color: var(--sand9); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a:hover { color: var(--sand12); }
+
+/* The privacy policy and the changelog: one readable column of text under the page's own navigation. */
+.policy { padding-top: 56px; padding-bottom: 96px; }
+.policy article { max-width: 42em; }
+.policy h3 { font-size: 15px; font-weight: 600; margin-top: 40px; }
+.policy p, .policy li { color: var(--sand11); }
+.policy p { margin-top: 12px; }
+.policy strong { color: var(--sand12); font-weight: 600; }
+.policy ul, .policy ol { margin-top: 12px; padding-left: 1.4em; }
+.policy li + li { margin-top: 6px; }
+.changelog > h2 { margin-bottom: 8px; }
+.release { max-width: 42em; margin-top: 32px; padding-top: 24px; border-top: var(--line); }
+.release h3 { margin-top: 0; font-variant-numeric: tabular-nums; }
+.release .note { margin-top: 4px; }
+
+@media (max-width: 860px) {
+  .wrap { padding: 0 24px; }
+  h1 { font-size: 40px; letter-spacing: -.8px; }
+  .links { gap: 18px; }
+  .links .section { display: none; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 56px; }
+  .hero .window { justify-self: center; }
+  .feature { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 56px 0; }
+  .feature.wide .window { margin-top: 32px; }
+  .details { grid-template-columns: 1fr 1fr; gap: 28px; padding-bottom: 72px; }
+}
+@media (max-width: 480px) {
+  .links { gap: 12px; }
+  .details { grid-template-columns: 1fr; }
+  .installer { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

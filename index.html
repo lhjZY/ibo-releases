@@ -1,0 +1,238 @@
+<!doctype html>
+<!--
+  The website of Ibo, the translation app for macOS and Windows, in the same "Paper" direction as
+  Asaki's site: warm white, hairlines, the app's own windows as they are.
+  Both languages are in the page; html[data-lang] decides which is shown, and html[data-os]
+  which system's shortcuts and installer come first (see site.js).
+  The screenshots are Ibo's real pages rendered against sample data (scripts/screenshots.py).
+-->
+<html lang="zh-CN" data-lang="zh" data-os="mac">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ibo</title>
+<meta name="description" content="Ibo 是 macOS 与 Windows 上的划词翻译工具：选中文字按快捷键，在跟随光标的弹窗里翻译、检查英文，再把句子收进词汇本复习。Ibo translates and checks the text you select on macOS and Windows, and helps you review the sentences you keep.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+
+<header class="wrap">
+  <nav aria-label="Ibo">
+    <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="28" height="28">Ibo</a>
+    <div class="links">
+      <a class="section" href="#translate"><span lang="zh">翻译</span><span lang="en">Translate</span></a>
+      <a class="section" href="#check"><span lang="zh">检查</span><span lang="en">Check</span></a>
+      <a class="section" href="#learn"><span lang="zh">学习</span><span lang="en">Learn</span></a>
+      <a href="changelog.html"><span lang="zh">更新日志</span><span lang="en">Changelog</span></a>
+      <a class="nav-download" href="#download"><span lang="zh">下载</span><span lang="en">Download</span></a>
+      <button id="language" type="button"><span lang="zh" aria-label="Switch to English">EN</span><span lang="en" aria-label="切换到中文">中文</span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div>
+      <h1><span lang="zh">选中，按下，<br>就在手边翻译。</span><span lang="en">Select, press,<br>and it’s translated.</span></h1>
+      <p class="lede">
+        <span lang="zh">Ibo 是 macOS 与 Windows 上的划词翻译工具。在任何应用里选中一段文字，按下快捷键，译文就出现在光标旁的弹窗里。写英文时用它检查，遇到好句子就收进词汇本，之后在同一个弹窗里复习。</span>
+        <span lang="en">Ibo is a translation tool for macOS and Windows. Select text in any app, press a shortcut, and the translation appears in a popup by your cursor. Check your English as you write, keep the sentences worth remembering, and review them later in the same popup.</span>
+      </p>
+      <a class="button" href="#download"><span lang="zh">免费下载</span><span lang="en">Download for free</span></a>
+      <p class="note"><span lang="zh">版本 0.1.2，支持 macOS 12 及以上、Windows 10 和 11</span><span lang="en">Version 0.1.2. For macOS 12 or later, Windows 10 and 11.</span></p>
+    </div>
+    <img class="window" lang="zh" src="assets/translate-zh.png" width="1120" height="936"
+      alt="Ibo 的翻译弹窗：上方是选中的英文原文，下方是微软翻译给出的中文译文">
+    <img class="window" lang="en" src="assets/translate-en.png" width="1120" height="936"
+      alt="Ibo's translation popup: the selected Chinese text above, its English translation from Microsoft Translator below">
+  </section>
+
+  <section class="wrap" id="translate">
+    <p class="part"><span lang="zh">翻译</span><span lang="en">Translate</span></p>
+    <div class="feature">
+      <div>
+        <h2><span lang="zh">在任何应用里，一个快捷键</span><span lang="en">One shortcut, from any app</span></h2>
+        <p>
+          <span lang="zh">Ibo 常驻在菜单栏或任务栏。按下快捷键，它读取当前应用里选中的文字，或者刚复制的内容，弹窗出现在光标旁边，不必切换窗口。中文译成英文，其他语言译成中文。快捷键可以在设置里重新录制。</span>
+          <span lang="en">Ibo lives in the menu bar or the taskbar. Press a shortcut and it reads the text selected in the app you are in, or what you have just copied, and opens next to your cursor without switching windows. Chinese is translated into English, and other languages into Chinese. Every shortcut can be recorded again in Settings.</span>
+        </p>
+      </div>
+      <figure>
+        <dl class="keys" data-for="mac">
+          <div><dt><kbd>⌘</kbd><kbd>1</kbd></dt><dd><span lang="zh">翻译选中文本</span><span lang="en">Translate selection</span></dd></div>
+          <div><dt><kbd>⌘</kbd><kbd>2</kbd></dt><dd><span lang="zh">检查选中文本</span><span lang="en">Check selection</span></dd></div>
+          <div><dt><kbd>⌘</kbd><kbd>3</kbd></dt><dd><span lang="zh">翻译剪贴板</span><span lang="en">Translate clipboard</span></dd></div>
+          <div><dt><kbd>⇧</kbd><kbd>⌘</kbd><kbd>G</kbd></dt><dd><span lang="zh">打开翻译</span><span lang="en">Open translation</span></dd></div>
+          <div><dt><kbd>⇧</kbd><kbd>⌘</kbd><kbd>L</kbd></dt><dd><span lang="zh">切换学习模式</span><span lang="en">Learn Mode</span></dd></div>
+        </dl>
+        <dl class="keys" data-for="windows">
+          <div><dt><kbd>Alt</kbd><kbd>1</kbd></dt><dd><span lang="zh">翻译选中文本</span><span lang="en">Translate selection</span></dd></div>
+          <div><dt><kbd>Alt</kbd><kbd>2</kbd></dt><dd><span lang="zh">检查选中文本</span><span lang="en">Check selection</span></dd></div>
+          <div><dt><kbd>Alt</kbd><kbd>3</kbd></dt><dd><span lang="zh">翻译剪贴板</span><span lang="en">Translate clipboard</span></dd></div>
+          <div><dt><kbd>Alt</kbd><kbd>Shift</kbd><kbd>G</kbd></dt><dd><span lang="zh">打开翻译</span><span lang="en">Open translation</span></dd></div>
+          <div><dt><kbd>Alt</kbd><kbd>Shift</kbd><kbd>L</kbd></dt><dd><span lang="zh">切换学习模式</span><span lang="en">Learn Mode</span></dd></div>
+        </dl>
+      </figure>
+    </div>
+
+    <div class="feature">
+      <div>
+        <h2><span lang="zh">不用密钥也能翻译</span><span lang="en">Translate without a key</span></h2>
+        <p>
+          <span lang="zh">默认使用微软翻译，装好就能用，也可以换成 Google 翻译。想要 AI 翻译时，填入你自己的 DeepSeek 密钥，或任何兼容 OpenAI 接口的服务。打开拆句，长段落会逐句对照显示。原文和译文都可以朗读，美式与英式英语各有四种音色。</span>
+          <span lang="en">Microsoft Translator works as soon as Ibo is installed, and Google Translate is one click away. For AI translation, add your own DeepSeek key or any service with an OpenAI-compatible API. Turn on sentence split to read long paragraphs sentence by sentence. Both sides can be read aloud, in four American and four British voices.</span>
+        </p>
+      </div>
+      <figure>
+        <ul class="services">
+          <li class="free"><span lang="zh">微软翻译</span><span lang="en">Microsoft Translator</span></li>
+          <li class="free"><span lang="zh">Google 翻译</span><span lang="en">Google Translate</span></li>
+          <li>DeepSeek</li>
+          <li><span lang="zh">OpenAI 兼容服务</span><span lang="en">OpenAI-compatible services</span></li>
+        </ul>
+        <figcaption><span lang="zh">深色为无需密钥的翻译引擎</span><span lang="en">Dark outlines need no key</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap" id="check">
+    <p class="part"><span lang="zh">检查</span><span lang="en">Check</span></p>
+    <div class="feature">
+      <div>
+        <h2><span lang="zh">写英文时，先检查一遍</span><span lang="en">Check your English before you send it</span></h2>
+        <p>
+          <span lang="zh">在邮件或聊天里选中刚写的英文，按 <span class="key" data-for="mac">⌘2</span><span class="key" data-for="windows">Alt+2</span>。改过的词用绿色下划线标出，下面是译回中文的意思和每处修改的说明。意思不对时，补一句你想表达的，Ibo 会按它重新改。</span>
+          <span lang="en">Select what you have just written in a mail or a chat and press <span class="key" data-for="mac">⌘2</span><span class="key" data-for="windows">Alt+2</span>. Changed words are underlined in green, followed by what the text says in Chinese and why each change was made. If the meaning is off, add a line about what you meant and Ibo checks again with it.</span>
+        </p>
+        <p>
+          <span lang="zh">满意了就按 <span class="key" data-for="mac">⌘↩</span><span class="key" data-for="windows">Ctrl+↩</span> 替换，改好的文字直接写回原来的应用。原文在这期间被改动过，Ibo 不会覆盖它。检查需要你自己的 AI 服务密钥。</span>
+          <span lang="en">When it reads right, press <span class="key" data-for="mac">⌘↩</span><span class="key" data-for="windows">Ctrl+↩</span> to replace, and the corrected text goes straight back into the app it came from. If the original has changed in the meantime, Ibo leaves it alone. Checking uses your own AI service key.</span>
+        </p>
+      </div>
+      <figure>
+        <img class="window" lang="zh" src="assets/check-zh.png" width="1120" height="1234" loading="lazy"
+          alt="Ibo 的检查结果：has 改为 have、question 改为 questions，附中文意思、修改说明和替换按钮">
+        <img class="window" lang="en" src="assets/check-en.png" width="1120" height="1234" loading="lazy"
+          alt="Ibo's check result: has becomes have and question becomes questions, with the meaning, the reasons and a Replace button">
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap" id="learn">
+    <p class="part"><span lang="zh">学习</span><span lang="en">Learn</span></p>
+    <div class="feature">
+      <div>
+        <h2><span lang="zh">收进词汇本，在弹窗里复习</span><span lang="en">Keep a sentence, review it in the popup</span></h2>
+        <p>
+          <span lang="zh">遇到值得记住的句子，点结果旁的 ♡ 或按 <span class="key" data-for="mac">⌘D</span><span class="key" data-for="windows">Ctrl+D</span> 收进词汇本，顺手记一句在哪里读到的。按 <span class="key" data-for="mac">⇧⌘L</span><span class="key" data-for="windows">Alt+Shift+L</span>，同一个弹窗变成复习卡片：看中文写英文、听写、改错、连词成句四种题型，逐词作答，答完显示句子结构和评级。</span>
+          <span lang="en">When a sentence is worth remembering, click ♡ beside the result or press <span class="key" data-for="mac">⌘D</span><span class="key" data-for="windows">Ctrl+D</span>, and note where you read it. Press <span class="key" data-for="mac">⇧⌘L</span><span class="key" data-for="windows">Alt+Shift+L</span> and the same popup becomes a review card with four exercises: write it from the Chinese, dictation, correction and sentence building. Answer word by word, then see the sentence’s structure and your grade.</span>
+        </p>
+      </div>
+      <figure>
+        <img class="window" lang="zh" src="assets/review-zh.png" width="1120" height="1040" loading="lazy"
+          alt="Ibo 的复习卡片：中文题目、四种题型，答完后按主语、谓语、补语、状语着色的句子结构和 Perfect 评级">
+        <img class="window" lang="en" src="assets/review-en.png" width="1120" height="1040" loading="lazy"
+          alt="Ibo's review card: the Chinese prompt, four exercises, and after the answer the sentence's structure coloured by role, graded Perfect">
+      </figure>
+    </div>
+
+    <div class="feature wide">
+      <div>
+        <h2><span lang="zh">每天复习一点，看得见进度</span><span lang="en">A little every day, and you can see it</span></h2>
+        <p>
+          <span lang="zh">学习窗口里，今日页列出待复习和新条目；词汇本可以搜索、筛选、分组和编辑，也能导出成 JSON 或 CSV；统计页显示过去一年每天的练习，以及近 30 天各题型的评分分布。</span>
+          <span lang="en">In the Learn window, Today shows what is due and what is new. The notebook can be searched, filtered, grouped and edited, and exported as JSON or CSV. Statistics show every day of practice over the past year, and the grades for each exercise over the last 30 days.</span>
+        </p>
+      </div>
+      <img class="window" lang="zh" src="assets/stats-zh.png" width="1800" height="1280" loading="lazy"
+        alt="Ibo 的学习窗口统计页：今日完成、连续天数、近 30 天答题与记住率，过去一年的热力图和各题型评分分布">
+      <img class="window" lang="en" src="assets/stats-en.png" width="1800" height="1280" loading="lazy"
+        alt="Statistics in Ibo's Learn window: done today, streak, answers and recall in 30 days, a year of practice and the grades per exercise">
+    </div>
+
+    <dl class="details">
+      <div>
+        <dt><span lang="zh">句子结构</span><span lang="en">Sentence structure</span></dt>
+        <dd><span lang="zh">词汇本里的句子按主语、谓语、宾语等成分着色，标出音标和释义。点一个词朗读，右键可以把单词或词组也收进词汇本。</span><span lang="en">Sentences in the notebook are coloured by subject, predicate, object and the rest, with phonetics and meanings. Click a word to hear it, or right-click to keep a word or phrase too.</span></dd>
+      </div>
+      <div>
+        <dt><span lang="zh">按记忆排期</span><span lang="en">Spaced repetition</span></dt>
+        <dd><span lang="zh">每种题型分别安排复习时间。每天复习多少、新学多少、一天从几点开始，都可以在设置里调整。</span><span lang="en">Each exercise is scheduled on its own. Set how many reviews and new entries a day, and when your day begins.</span></dd>
+      </div>
+      <div>
+        <dt><span lang="zh">复习提醒</span><span lang="en">Review reminders</span></dt>
+        <dd><span lang="zh">托盘图标上显示今天还剩几条待复习，不发系统通知。不需要时可以在设置里关掉。</span><span lang="en">The tray icon shows how many reviews are left today, without system notifications. Turn it off in Settings if you prefer.</span></dd>
+      </div>
+      <div>
+        <dt><span lang="zh">撤销</span><span lang="en">Undo</span></dt>
+        <dd><span lang="zh">收进或移出词汇本、删除条目和分组，都可以撤销。在输入框里接受的修改，也能一键退回原文。</span><span lang="en">Adding to or removing from the notebook and deleting entries or groups can all be undone, and changes accepted into the input field can be taken back in one click.</span></dd>
+      </div>
+      <div>
+        <dt><span lang="zh">数据在你的电脑上</span><span lang="en">Your data, on your computer</span></dt>
+        <dd><span lang="zh">没有账户和服务器，不收集使用数据。设置、词汇本和练习记录只保存在本机。</span><span lang="en">No account, no server, no usage data. Settings, the notebook and your practice stay on this computer.</span></dd>
+      </div>
+      <div>
+        <dt><span lang="zh">密钥只存本机</span><span lang="en">Keys stay local</span></dt>
+        <dd><span lang="zh">AI 服务的密钥不进界面和日志。macOS 上存为只有你能读的文件，Windows 上用系统加密保存。</span><span lang="en">AI service keys never reach the interface or the logs. On macOS they are kept in a file only you can read, and on Windows encrypted by the system.</span></dd>
+      </div>
+      <div>
+        <dt><span lang="zh">两个平台一致</span><span lang="en">The same on both</span></dt>
+        <dd><span lang="zh">Mac 和 Windows 上的界面、题型和词汇本格式相同，词汇本文件复制过去就能继续复习。</span><span lang="en">The interface, the exercises and the notebook format are the same on Mac and Windows. Copy the notebook across and carry on.</span></dd>
+      </div>
+      <div>
+        <dt><span lang="zh">中文与 English</span><span lang="en">Chinese and English</span></dt>
+        <dd><span lang="zh">界面可以在中文和英文之间切换，浅色、深色跟随系统或自选。</span><span lang="en">Switch the app between Chinese and English, and follow the system’s light or dark appearance or pick one.</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="wrap download" id="download">
+    <img src="assets/icon.png" alt="" width="72" height="72">
+    <h2><span lang="zh">选中一段英文试试</span><span lang="en">Select some English and try it</span></h2>
+    <p class="note"><span lang="zh">版本 0.1.2，2026 年 11 月 20 日</span><span lang="en">Version 0.1.2, November 20, 2026</span></p>
+    <div class="installers">
+      <div class="installer" data-for="mac">
+        <div>
+          <p class="name">macOS</p>
+          <p class="about"><span lang="zh">通用版，适用于 Apple 芯片和 Intel，需要 macOS 12 及以上。DMG，11 MB，已通过 Apple 公证。</span><span lang="en">Universal, for Apple silicon and Intel, macOS 12 or later. DMG, 11 MB, notarized by Apple.</span></p>
+        </div>
+        <a class="button" href="https://github.com/lhjZY/ibo-releases/releases/latest/download/Ibo.dmg"><span lang="zh">下载 DMG</span><span lang="en">Download DMG</span></a>
+      </div>
+      <div class="installer" data-for="windows">
+        <div>
+          <p class="name">Windows x64</p>
+          <p class="about"><span lang="zh">适用于 Intel 和 AMD 处理器，Windows 10 和 11。安装程序，5 MB。</span><span lang="en">For Intel and AMD processors, Windows 10 and 11. Installer, 5 MB.</span></p>
+        </div>
+        <a class="button" href="https://github.com/lhjZY/ibo-releases/releases/latest/download/Ibo-Setup-x64.exe"><span lang="zh">下载安装程序</span><span lang="en">Download installer</span></a>
+      </div>
+      <div class="installer" data-for="windows-arm">
+        <div>
+          <p class="name">Windows ARM</p>
+          <p class="about"><span lang="zh">适用于 ARM 处理器的 Windows 电脑。安装程序，5 MB。</span><span lang="en">For Windows PCs with ARM processors. Installer, 5 MB.</span></p>
+        </div>
+        <a class="button" href="https://github.com/lhjZY/ibo-releases/releases/latest/download/Ibo-Setup-arm64.exe"><span lang="zh">下载安装程序</span><span lang="en">Download installer</span></a>
+      </div>
+    </div>
+    <div class="first-run">
+      <p><strong><span lang="zh">macOS</span><span lang="en">macOS</span></strong>
+        <span lang="zh">把 Ibo 拖进“应用程序”后打开。读取选中文字和替换写回需要辅助功能权限，请在“系统设置 › 隐私与安全性 › 辅助功能”中允许 Ibo。从 0.1.1 升级的需要重新允许一次。</span>
+        <span lang="en">Drag Ibo into Applications and open it. Reading selections and replacing text need Accessibility access: allow Ibo in System Settings › Privacy &amp; Security › Accessibility. If you are upgrading from 0.1.1, allow it once more.</span></p>
+      <p><strong><span lang="zh">Windows</span><span lang="en">Windows</span></strong>
+        <span lang="zh">安装程序暂未进行代码签名，运行时 Windows 可能提示“已保护你的电脑”，点“更多信息”，再点“仍要运行”。</span>
+        <span lang="en">The installer is not code-signed yet, so Windows may say it protected your PC. Click More info, then Run anyway.</span></p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Ibo</span>
+  <span class="footer-links">
+    <a href="privacy.html"><span lang="zh">隐私政策</span><span lang="en">Privacy</span></a>
+    <span><span lang="zh">为 macOS 与 Windows 而设计</span><span lang="en">Designed for macOS and Windows</span></span>
+  </span>
+</footer>
+
+</body>
+</html>
